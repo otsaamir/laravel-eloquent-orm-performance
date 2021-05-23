@@ -1,5 +1,12 @@
 <?php
 
+use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\ProductCategoryController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\SellerController;
+use App\Models\ProductCategory;
+use App\Models\Seller;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +23,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::resource('products', ProductController::class);
+Route::resource('customer', CustomerController::class);
+Route::resource('product-category', ProductCategoryController::class);
+Route::resource('seller', SellerController::class);
+Route::resource('order', OrderController::class);
+// Route::resource('paymet', ProductController::class);
